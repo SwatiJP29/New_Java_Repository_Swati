@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Employee Form</title>
+</head>
+<body>
+    <form id="form" action="scripts/comm.js">
+        Enter Employee ID <input type="text" id="empid"><br/>
+        Enter Employee Name <input type="text" id="empname"><br/>
+        Choose Domain
+            <select id="domain" onselect="moduleselect()">
+                <option id = "default" selected="selected"  value="-----Select Module----">------Select Module---------- </option>
+                <option id = "JEE" value="JEE">JEE</option>
+                <option id = ".NET" value=".NET">.NET</option>
+            </select>
+            <br>
+            Choose Module
+            <select id="module" onchange="moduleselect()">
+                <option id = = "default" selected="selected"  value="-----Select Module----">------Select Module---------- </option>
+                <option id = "corejava" value="CoreJava">CoreJava</option>
+                <option id = "serveletjava" value="Serverlet-JSP">Serverlet-JSP</option>
+                <option id = "spring" value="Spring">Spring</option>
+                <option id = "csharp" value="C#">C#</option>
+                <option id = "addotnet" value="ADO.NET">ADO.NET</option>
+                <option id = "aspdotnet" value="ASP.NET">ASP.NET</option>
+            </select>
+            <br>
+            Enter MPT Marks
+            <input id = "mptmarks" type="text" name="MPTMarks" type="number">
+            <br>
+            Enter MTT Marks
+            <input id = "mttmarks" type="text" name="MTTMarks" type="number">
+            <br>
+            Enter Assignment Marks
+            <input id = "assignment_marks" type="text" name="AssignmentMarks" type="number">
+            <br>            
+            <input type="submit" value="Submit" onclick="calculate()">
+            <input type="text" id="result" value="">
+
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript">
+            function plus(a,b) 
+            {
+                return (a + b);
+            }
+
+            function minus(a,b) 
+            {
+                return (a - b);
+            }
+
+            function multiply(a,b) 
+            {
+                return (a * b);
+            }
+
+            function divide(a,b) 
+            {
+                return (a / b);
+            }
+
+            function calc() {
+
+                var x = Number(document.getElementById("input1").value);
+                var y = Number(document.getElementById("operator").value);
+                var z = Number(document.getElementById("input2").value);
+                var w;
+
+                switch (y) {
+                    case 0:
+                        w = plus(x, z);
+                        break;
+
+                    case 1:
+                        w = minus(x, z);
+                        break;
+
+                    case 2:
+                        w = multiply(x, z);
+                        break;
+
+                    case 3:
+                        w = divide(x, z);
+                        break;
+                        
+                }
+             document.getElementById("result").value=w;
+                
+            }
+
+</script>
+Enter First Number <input type="text" id="input1" value="">
+Select operator
+<select id="operator">
+    <option value="0">+</option>
+    <option value="1">-</option>
+    <option value="2">*</option>
+    <option value="3">/</option>
+</select>
+
+Enter second number<input type="text" id="input2" value="">
+<input type="button" onClick="calc()" value="ANSWER">
+<input type="text" id="result" value="">
+</body>
+</html>

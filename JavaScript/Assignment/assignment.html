@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Employee Form</title>
+    <script>
+
+    function validateEmptyfields(){
+        var a= document.getElementById("emp_id").value;
+        var b= document.getElementById("emp_name").value;
+        var c= document.getElementById("mptmarks").value;
+        var d= document.getElementById("mttmarks").value;
+        var e= document.getElementById("assignment_marks").value;
+        if(a=="" || b=="" || c=="" || d=="" || e=="")
+        {
+            alert("All fields are mandatory");
+            return false; 
+        }
+    }    
+    function validateEmployeeID()
+    {
+        
+        var x = document.getElementById("emp_id").value;
+        var len = x.length;
+        if(len!=6)
+        {
+            alert("Employee id should be 6 digit number");
+            return false;
+        }
+    }
+    function validateEmployeeName()
+    {
+        
+        var y = document.getElementById("emp_name").value;
+        var len = y.length;
+        var maxlength = 30;
+        if(len>maxlength)
+        {
+            alert("Employee Name should not be more than 30 characters");
+            return false;
+        }
+    }
+    function validateMPTMarks()
+    {
+        
+        var z = Number(document.getElementById("mptmarks").value);
+        if(z<0)
+        {
+            alert("MPT Marks cannot be negative");
+            return false;
+        }
+    }
+    function validateMTTMarks()
+    {
+        
+        var z = Number(document.getElementById("mttmarks").value);
+        if(z<0)
+        {
+            alert("MPT Marks cannot be negative");
+            return false;
+        }
+    }
+    function validateAssignmentMarks()
+    {
+        
+        var z = Number(document.getElementById("assignment_marks").value);
+        if(z<0)
+        {
+            alert("MPT Marks cannot be negative");
+            return false;
+        }
+    }
+    function moduleselect()
+    {
+        var domain = document.getElementById("domain");
+
+
+        var userselect = domain.options[domain.selectedindex].value;
+        //var domain2 = document.getElementById(".NET").value;
+        if(userselect=="JEE")
+        {
+            document.getElementById("default").style.display="none";
+            document.getElementById("corejava").style.display="block";
+            document.getElementById("serveletjava").style.display="block";
+            document.getElementById("spring").style.display="block";
+            
+            document.getElementById("csharp").style.display="none";
+            document.getElementById("addotnet").style.display="none";
+            document.getElementById("aspdotnet").style.display="none";
+        }
+        
+
+        if(userselect==".NET")
+        {
+            document.getElementById("default").style.display="none";
+            document.getElementById("csharp").style.display="block";
+            document.getElementById("addotnet").style.display="block";
+            document.getElementById("aspdotnet").style.display="block";
+            document.getElementById("corejava").style.display="none";
+            document.getElementById("serveletjava").style.display="none";
+            document.getElementById("spring").style.display="none";
+            
+        }
+    }
+    function calculate()
+    {
+        var mpt = Number(document.getElementById("mptmarks").value);
+        var mtt = Number(document.getElementById("mttmarks").value);
+        var assignment = Number(document.getElementById("assignment_marks").value);
+        avgpercent = ((mpt+mtt+assignment)/300);
+        document.getElementById("result").value = avgpercent;
+        alert("Average marks obtained are : " +avgpercent);
+
+    }
+    </script>
+
+</head>
+<body>
+        <form name = "myForm" action="result.html" onsubmit="return validateEmptyfields()" method="POST">
+            Enter Employee ID:
+            <input id = "emp_id" type="number" name="EmployeeID">
+            <br>
+            Enter Employee Name:
+            <input id = "emp_name" type="text" name="EmpName">
+            <br>
+            Choose Domain
+            <select id="domain" onselect="moduleselect()">
+                <option id = "default" selected="selected"  value="-----Select Module----">------Select Module---------- </option>
+                <option id = "JEE" value="JEE">JEE</option>
+                <option id = ".NET" value=".NET">.NET</option>
+            </select>
+            <br>
+            Choose Module
+            <select id="module" onchange="moduleselect()">
+                <option id = = "default" selected="selected"  value="-----Select Module----">------Select Module---------- </option>
+                <option id = "corejava" value="CoreJava">CoreJava</option>
+                <option id = "serveletjava" value="Serverlet-JSP">Serverlet-JSP</option>
+                <option id = "spring" value="Spring">Spring</option>
+                <option id = "csharp" value="C#">C#</option>
+                <option id = "addotnet" value="ADO.NET">ADO.NET</option>
+                <option id = "aspdotnet" value="ASP.NET">ASP.NET</option>
+            </select>
+            <br>
+            Enter MPT Marks
+            <input id = "mptmarks" type="text" name="MPTMarks" type="number">
+            <br>
+            Enter MTT Marks
+            <input id = "mttmarks" type="text" name="MTTMarks" type="number">
+            <br>
+            Enter Assignment Marks
+            <input id = "assignment_marks" type="text" name="AssignmentMarks" type="number">
+            <br>            
+            <input type="submit" value="Submit" onclick="calculate()">
+            <input type="text" id="result" value="">
+          </form>
+</body>
+</html>

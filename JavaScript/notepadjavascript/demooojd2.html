@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    var myEmployee = {
+        empId: 1,
+        empName:"Swati",
+        empDep: "CIB",
+        isAdmin: false,
+        empSalary: 4543.99,
+        address: {
+            street: "Near Nitin Company",
+            city: "Thane",
+            pincode: 410017
+        }
+    };
+
+    console.log(myEmployee["empId"]);
+    console.log(myEmployee.address); //all address will print
+    console.log(myEmployee["address"]);
+    console.log(myEmployee.address.city)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

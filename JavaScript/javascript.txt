@@ -1,0 +1,34 @@
+Interpretor vs compiler - compiler checks once the sytax for the program if we add any new line then only that line would be compiled (check for sytax)
+
+Every browser has a interpreter which will check the sytax for each line.
+
+Java is interpreted by the browser. But brower has different engine.
+
+Compiler for javascript is NodeJS. Before NodeJS
+
+MEAN - MongoDB Express Angular Node
+
+
+
+Servers
+1. OS
+Client SErver
+Server
+
+2. WebServices
+
+Apache Tomcat
+
+3. Database Server
+
+
+Value Type and Reference type
+
+Value Type /Primitive types is stored in STack and reference type is stored in heap.
+
+var a=5, here var will have the data type as per the value in variable a hence we did not have to specify the data type
+
+reference and primitive in Stack and object in heap.
+
+Object obj = new Object();
+here object is store in heap and obj(its reference ) is stored in stack
