@@ -1,0 +1,1 @@
+ *ngIf="productData.stock===true;else outofstock"
