@@ -1,0 +1,8 @@
+Attribute Selectors: 
+JQuery uses XPath expressions to select elements with given attributes. To select, put the attribute with in [ ] 
+Examples: 
+? $(“[href]”) ? selects all elements with href attributes 
+? $(“input[type=text]”) ? selects all <input> elements with a type of text 
+Attributes are parameters to HTML elements. 
+Example: in <input type=“text”>, „type? is the attribute and „text? is its value 
+Example: in <a href=“http://google.com” target=“_blank”>, target is the attribute and _blank is its value 

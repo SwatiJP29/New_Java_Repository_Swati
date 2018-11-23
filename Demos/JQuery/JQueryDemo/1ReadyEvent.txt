@@ -1,0 +1,8 @@
+All jQuery methods in our examples, are inside a document ready event:
+
+$(document).ready(function(){
+
+   // jQuery methods go here...
+
+});
+This is to prevent any jQuery code from running before the document is finished loading (is ready).

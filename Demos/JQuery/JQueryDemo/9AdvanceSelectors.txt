@@ -1,0 +1,28 @@
+JQuery advanced selector uses the next generation of CSS supported by Mozilla Firefox, IE 7, Chrome, Safari, etc. 
+Examples: ? $('*') ? Selects all elements in the document 
+? $(this) ? Selects the current element ? $("p > *") ? Selects all elements that are children of <p> element 
+? $("li:not(.myclass)") ? Selects all elements matched by <li> that do not have class="myclass” 
+? $("li > ul") ? Selects all elements matched by <ul> that are children of an element matched by <li> 
+? $("code, em, strong") ? Selects all elements matched by <code> or <em> or <strong> 
+? $("p:empty") ? Selects all elements matched by <p> that have no children 
+? $(":radio")  ? Selects all radio buttons in the form 
+? $(":checked") ? Selects all checked boxes in the form 
+? $("[href!=„#?]") ? Selects all elements with href value NOT equal to “#” 
+? $("[href^=„http://?]") ? Selects all elements with href value that starts with „http://? 
+? $("[href$=„.pdf?]") ? Selects all elements with href value that ends with „.pdf? 
+Note: The below examples are not limited to <li> & also apply to other elements like <p>, <img>, etc 
+? $("li:even") ? Selects all elements matched by <li> that have an even index value 
+? $("tr:odd") ? Selects all elements matched by <tr> that have an odd index value 
+? $("li:first") ? Selects the first <li> element 
+Developing Mobile Applications - Participant Guide  
+60 © 2012 WIPRO LTD | WWW.WIPRO.COM  
+? $("li:last") ? Selects the last <li> element 
+? $("li:eq(2)") ? Selects the third <li> element. Index starts at 0 
+? $("li:lt(2)") ? Selects all elements matched by <li> element before the third one; in other words, the first two <li> elements 
+? $("li:gt(1)") ? Selects all elements matched by <li> after the second one 
+? $("li:first-child") ? Selects all elements matched by <li> that are the first child of their parent 
+? $("li:last-child") ? Selects all elements matched by <li> that are the last child of their parent 
+? $(":parent") ? Selects all elements that are the parent of another element, including text 
+? $("li:contains(second)") ? Selects all elements matched by <li> that contain the text second 
+? $("li:visible") ? Selects all elements matched by <li> that are visible 
+? $("li:hidden") ? Selects all elements matched by <li> that are hidden 

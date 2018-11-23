@@ -1,0 +1,7 @@
+CSS Selectors: 
+JQuery uses CSS IDs & classnames to select elements. A CSS ID is preceded with a „#? & a classname with a „.? 
+Examples: 
+ $(“#intro”) 		 selects the first element with id=“intro” 
+ $(“p.intro”) 		 selects all <p> elements with class=“intro” 
+ $(“a#myId.myClass”) 	 selects <a> with id=“myId” & class=“myClass” 
+ $("p a.specialClass") 	 selects <a> with class=“specialClass” declared within <p> elements 
