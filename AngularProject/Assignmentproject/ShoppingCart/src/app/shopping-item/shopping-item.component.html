@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+      body{
+        padding: 30px;
+      }
+      .display{
+        table-layout: auto;
+    
+        width: 500%;
+        border: 2px solid black;
+        font-family: 'Courier New', Courier, monospace;
+        size: 10px;
+      }
+      .footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: blue;
+   color: white;
+   text-align: left;
+}
+      
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+          <form #shoppingitemform="ngForm" ngNativeValidate >
+            <h1>Add Item</h1>
+              <div class="form-group">
+                  <label for="username">Name</label>
+                  <input type="text" class="form-control" pattern="[a-zA-Z][a-zA-Z ]+" name="name" #NameControl="ngModel"
+                    ngModel required>
+                  <div *ngIf="NameControl?.touched && NameControl?.invalid" class="alert alert-danger">
+                    <div *ngIf="NameControl.errors?.required">
+                      Name is required
+                    </div>
+                    <div *ngIf="NameControl.errors?.pattern">
+                      Please enter a valid Name
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <input type="text" class="form-control" pattern="[1-9]{2}" name="quantity" #QuantityControl="ngModel"
+                      ngModel required>
+                    <div *ngIf="QuantityControl?.touched && QuantityControl?.invalid" class="alert alert-danger">
+                      <div *ngIf="QuantityControl.errors?.required">
+                        Password is required
+                      </div>
+                      <div *ngIf="QuantityControl.errors?.pattern">
+                        Please enter a valid Password
+                      </div>
+                    </div>
+                  </div>
+                  <button type="submit" name="button" class="btn btn-success" >Submit </button><br/><br/>
+                  <div class="footer">
+                      <p>Happy Learning Angular</p>
+                  </div> 
+                  
+                  
+          </form>
+        </div>
+      </div>
+  {{shoppingitemform.value | json}}
+</body>
+
+</html>

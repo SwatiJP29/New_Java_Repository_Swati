@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  body{
+    padding: 30px;
+  }
+  .display{
+    table-layout: auto;
+
+    width: 500%;
+    border: 2px solid black;
+    font-family: 'Courier New', Courier, monospace;
+    size: 10px;
+  }
+  .footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: blue;
+   color: white;
+   text-align: left;
+}
+  
+</style>
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <form #loginform="ngForm" ngNativeValidate *ngIf="!toggleForm">
+          <div class="form-group">
+              <label for="username">UserName</label>
+              <input type="text" class="form-control" pattern="[a-zA-Z][a-zA-Z ]+" name="username" #NameControl="ngModel"
+                ngModel required>
+              <div *ngIf="NameControl?.touched && NameControl?.invalid" class="alert alert-danger">
+                <div *ngIf="NameControl.errors?.required">
+                  Name is required
+                </div>
+                <div *ngIf="NameControl.errors?.pattern">
+                  Please enter a valid Name
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="text" class="form-control" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="password" #PasswordControl="ngModel"
+                  ngModel required>
+                <div *ngIf="PasswordControl?.touched && PasswordControl?.invalid" class="alert alert-danger">
+                  <div *ngIf="PasswordControl.errors?.required">
+                    Password is required
+                  </div>
+                  <div *ngIf="PasswordControl.errors?.pattern">
+                    Please enter a valid Password
+                  </div>
+                </div>
+              </div>
+              <button type="submit" name="button" class="btn btn-success" >Submit </button><br/><br/>
+             
+              <a href ng-click="https://www.google.co.in/">Create New Account</a>
+              <div class="footer">
+                  <p>Happy Learning Angular</p>
+              </div>
+      </form>
+    </div>
+  </div>
+  
+</body>
+</html>
