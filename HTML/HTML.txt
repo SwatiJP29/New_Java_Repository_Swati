@@ -1,0 +1,25 @@
+HTTP Request:
+
+Created by Web Browser
+Sent to browser
+
+Header:
+Browser Agent
+Client IP
+Get Parameters
+
+Body:
+Post Parameters
+
+HTTP REsponse
+Created by Web SErver
+Sent to Client(Web Browser)
+
+Header
+Server Type
+Expiry Date
+Cache Settings
+
+Body
+HTML File
+

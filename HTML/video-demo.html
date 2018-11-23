@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        canvas{
+        border:1pt solid black;
+    }
+    </style>
+
+</head>
+
+<body>
+    <h2>Video Playback</h2>
+
+    Tries to play the FIRST video, else play Second
+    <video controls autoplay muted>
+        <source src="videos/small.ogv" type="video/ogg" />
+        <source src="videos/small.webm" type="video/webm" />
+        <source src="videos/small.mp4" type="video/mp4" />
+    </video>
+    <br />
+    <canvas id="can1" width="200" height="200">
+        Your browser doesn't support canvas!
+    </canvas>
+    <h2>Email Field</h2>
+    <p>The <strong>input type="email"</strong> is used for input fields that should contain an e-mail address:</p>
+
+    <form action="/action_page.php">
+        E-mail:
+        <input type="email" name="email">
+        <input type="submit">
+    </form>
+    <p>
+        <b>Note:</b>type="email" is not supported in IE9 and earlier.
+    </p>
+    <h2>URL Field</h2>
+    <p>The <strong>input type="url"</strong> is used for input fields that should contain a URL address:</p>
+
+    <form action="/action_page.php">
+        Add your homepage:
+        <input type="url" name="homepage">
+        <input type="submit">
+    </form>
+
+    <p><b>Note:</b>
+        The type="url" is not supported in IE9 and earlier versions.</p>
+
+</body>
+<script>
+    var myCanvas = document.getElementById("can1");
+    var ctx = myCanvas.getContext("2d");
+    ctx.fillStyle = '#ff0099';
+    ctx.fillRect(0, 0, 100, 100);
+    ctx.fillStyle = '#ff9900';
+    ctx.fillRect(50, 20, 120, 120);
+    ctx.rect(20, 20, 150, 100);
+    ctx.stroke();
+</script>
+
+</html>

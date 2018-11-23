@@ -1,0 +1,28 @@
+Validating XML against XSD
+
+1. The location of XSD file should be mentioned somewhere in side XML file
+	1.1 Import a special namespace
+	  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	This namespace has one attribute called:
+		xsi:schemaLocation="{namespace} {relative-path-to-xsd}"
+	
+	1.2 Define namespace and its XSD path
+		xsi:schemaLocation="urn:mahendra.com:schema1 schema1.xsd"
+
+2. Import the user-defined namespace
+	xmlns:urn:mahendra.com:schema1"
+
+Create XSD File
+1. Create new XML file and before saving, rename extenstion to XSD.
+2. First line in every XSD file
+	<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+
+3. Define user-defined xml namespace for new schema 
+	//targetNamespace="{URL o URN}
+	targetNamespace="urn:mahendra.com:schema1">
+
+4.Define the first (ROOT) element for targeted XML files:
+	<xsd:element name="product">
+
+xsd:SimpleType
+This is where we give the rules for the elements/
