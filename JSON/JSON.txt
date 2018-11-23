@@ -1,0 +1,77 @@
+JSON Fundamentals
+
+JSON is defined under ECMA 262 group
+It is a form to trasfer data.
+
+java into json, json into java using GSON
+
+.net, python can read json files
+
+JSON can store variables of any data type.. any variable is stored as object
+There should be only one root element in JSON objects.
+
+VALID JSON Array:
+
+Array of 3 elements
+[10,11,12]
+
+Array of Four elements where second is array
+
+["abc", ["efg", "pqr"], 1.7, false]
+
+Array of 2 elements, both are arrays!
+
+[["abc", ["efg", "pqr"], 1.7, false],
+[12,23,23]]
+
+For Object declaration we use {} in json - it contain name and value
+
+https://howtodoinjava.com/json/json-simple-read-write-json-examples/
+
+Non JSON text - abc, pqr, sff // it is plain text not in the format of json
+Not well-formed - [abc, pqr, sff]// quotes are missing
+
+
+HTML is for showing the data and JSON supplies data to html to display
+
+
+in developer tools-console - F12, chrome
+
+var data = ["abc", "xyz", 10.0, false]
+undefined
+data[0]
+"abc"
+data.length
+4
+var emp = {"name": "Swati", "lastname": "Deshpande"}
+undefined
+emp.lastname
+"Deshpande"
+
+
+
+CSS Syntax
+
+SELECTOR
+{
+CSS_PROPERTY : VALUE
+}
+
+Valid Selectors ARE:
+
+TAG Selector(eg h1)
+
+ID (eg #field1)
+
+Class Selector (eg .odd)
+
+
+h1, h2, h3
+
+h1, #filed1, .class1
+
+
+
+ <style type="text/css"> - Internal css
+
+First external will be called, then internal and then embedded css will override them

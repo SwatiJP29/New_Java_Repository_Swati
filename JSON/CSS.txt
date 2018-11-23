@@ -1,0 +1,24 @@
+Box Properties:
+
+margin: space between elements
+padding: space between content of an element and its borders
+border: border for the element
+
+Suffixex can be used:
+
+-left
+-right
+-top
+-bottom
+
+Note: These properties are not inherited by child elements
+
+TExt/Font properties:
+
+Inherited by child elements
+
+We can apply the CSS styles in 3 ways:
+
+1. Tag selector
+2. Class selector
+3. ID selector

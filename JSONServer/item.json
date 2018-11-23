@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "itemname": "phone",
+      "itemquantity": 2
+    },
+    {
+      "id": 2,
+      "itemname": "charger",
+      "itemquantity": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "itemname": "laptop",
+      "itemquantity": 5,
+      "id": 5
+    }
+  ]
+}
