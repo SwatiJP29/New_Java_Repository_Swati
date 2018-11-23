@@ -1,0 +1,57 @@
+package com.jp;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.LinkedList;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class DBTablesServlet
+ */
+@WebServlet("/DBTablesServlet")
+public class DBTablesServlet extends HttpServlet {
+	
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		LinkedList<String> tables = new LinkedList<String>();
+		response.setContentType("text/html");
+		PrintWriter out=response.getWriter();
+		try {
+			Class.forName("oracle.jdbc.OracleDriver");
+            Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/orcl", "hr", "hr");
+			DatabaseMetaData md = con.getMetaData();
+			ResultSet rs = md.getTables(null, null, null, null);
+			while (rs.next()) {
+				  out.println(tables.add(rs.getString(3)));
+				  out.flush();
+				  
+				}
+			rs.close();
+            st.close();
+            con.close();
+            System.out.println("Closed everything!");
+		
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+	}
+
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+		
+	}
+
+}

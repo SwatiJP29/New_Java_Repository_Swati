@@ -45,8 +45,10 @@ public class LoginServlet extends HttpServlet {
 		
 				if (loginuser.validateUser()){
 					
-					out.println("<h1> Welcome to HTTP Servlets </h1>");
-					out.flush();
+					
+				
+				response.sendRedirect("DBTablesServlet");
+				
 				}
 				else{
 					

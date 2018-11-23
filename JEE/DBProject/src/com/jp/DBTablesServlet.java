@@ -4,8 +4,10 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.LinkedList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,30 +20,43 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/DBTablesServlet")
 public class DBTablesServlet extends HttpServlet {
-	Connection con = null;
+	
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		LinkedList<String> tables = new LinkedList<String>();
+		response.setContentType("text/html");
+		PrintWriter out=response.getWriter();
+		try {
+			Class.forName("oracle.jdbc.OracleDriver");
+            Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/orcl", "hr", "hr");
+			DatabaseMetaData md = con.getMetaData();
+			ResultSet rs = md.getTables(null, null, null, new String[]{"TABLE"});
+			while (rs.next()) {
+				  tables.add(rs.getString(3));
+				  
+				  
+				}
+			rs.close();
+           
+            con.close();
+            
+            for (int i=0; i<tables.size();i++){
+            	out.println("<a href='DBTableDataServlet?tablename="+tables.get(i)+"' >"+ tables.get(i) +"</a></br> ");
+            }
+		
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.setContentType("text/html");
-		PrintWriter out=response.getWriter();
-		try {
-			DatabaseMetaData md = con.getMetaData();
-			ResultSet rs = md.getTables(null, null, "%", null);
-			while (rs.next()) {
-				  out.println(rs.getString(3));
-				  out.flush();
-				}
 		
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		
 	}
 
