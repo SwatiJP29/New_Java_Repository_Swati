@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ad Item</title>
+  
+    // $('.editform').hide();
+
+    // $('.showform, .editform').click(function(){
+    //   $('.showform, .editform').toggle()}
+      
+    // );
+    
+ 
+  <style>
+    body{
+      padding: 30px;
+    }
+    .display{
+      table-layout: auto;
+
+      width: 500%;
+      border: 2px solid black;
+      font-family: 'Courier New', Courier, monospace;
+      size: 10px;
+    }
+    
+  </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+  
+  
+      <div class="showform">
+        
+        <form #frm="ngForm" id="showform" (ngSubmit)="addItemToJSON(frm)" ngNativeValidate *ngIf="!toggleForm">
+          <h1>Add Item</h1>    
+          <!-- <div class="form-group">
+          <label for="name">ID</label>
+          <input type="text"  class="form-control" pattern="[a-zA-Z][a-zA-Z ]+" name="name"  #NameControl="ngModel" ngModel required>
+          
+      </div> -->
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" pattern="[a-zA-Z][a-zA-Z ]+" name="name" #NameControl="ngModel"
+              ngModel required>
+            <div *ngIf="NameControl?.touched && NameControl?.invalid" class="alert alert-danger">
+              <div *ngIf="NameControl.errors?.required">
+                Name is required
+              </div>
+              <div *ngIf="NameControl.errors?.pattern">
+                Please enter a valid Name
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputPhoneNumber">Quantity</label>
+            <input type="number" class="form-control" name="itemnumber" #ItemNumberControl="ngModel" ngModel required>
+            <div *ngIf="ItemNumberControl?.touched && ItemNumberControl?.invalid" class="alert alert-danger">
+              <div *ngIf="ItemNumberControl.errors?.required">
+                Contact is required
+              </div>
+              <!-- <div *ngIf="ContactControl.errors?.pattern">
+                Please enter a valid contact number
+              </div> -->
+            </div>
+          </div>
+          <button type="submit" name="button" class="btn btn-success" [disabled]="frm.invalid">Add Item </button>
+        </form>
+     
+    <div id="eform">
+    
+    
+        <div class="editform">
+          <form #editfrm="ngForm" *ngIf="toggleForm" (click)=editForm()>
+              <h1>Edit Item</h1>
+            <!-- <div class="form-group">
+          <label for="name">ID</label>
+          <input type="text"  class="form-control" pattern="[a-zA-Z][a-zA-Z ]+" name="name"  #NameControl="ngModel" ngModel required>
+          
+      </div> -->
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" pattern="[a-zA-Z][a-zA-Z ]+" name="name" #NameControl="ngModel"
+              [(ngModel)]="selectedItem.itemname" required>
+              <div *ngIf="NameControl?.touched && NameControl?.invalid" class="alert alert-danger">
+                <div *ngIf="NameControl.errors?.required">
+                  Name is required
+                </div>
+                <div *ngIf="NameControl.errors?.pattern">
+                  Please enter a valid Name
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPhoneNumber">Quantity</label>
+              <input type="number" class="form-control" name="itemnumber" #ItemNumberControl="ngModel" [(ngModel)]="selectedItem.itemquantity" required>
+              <div *ngIf="ItemNumberControl?.touched && ItemNumberControl?.invalid" class="alert alert-danger">
+                <div *ngIf="ItemNumberControl.errors?.required">
+                  Contact is required
+                </div>
+                <!-- <div *ngIf="ContactControl.errors?.pattern">
+                Please enter a valid contact number
+              </div> -->
+              </div>
+            </div>
+            <button type="submit" name="button" class="btn btn-success" [disabled]="frm.invalid">Add Item </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- {{frm.value | json}} -->
+
+
+
+
+
+    <h3>Shopping List</h3>
+    <table>
+
+      <thead class=display>
+        <tr>
+          <th class=display>ID</th>
+          <th class=display>Item Name </th>
+          <th class=display>Item Quantity </th>
+          <th>CheckBox</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let col of cart">
+          <td class="display">{{col.id}}</td>
+          <td class="display">{{col.itemname}}</td>
+          <td class="display">{{col.itemquantity}}</td>
+          <td class="display"><input type="checkbox" name="name1" />&nbsp;</td>
+          <td class="display">
+
+            <input id="editbutton" (click)=showEditForm(col) type="submit" name="Edit" value="Edit" />
+            <input id="deletebutton" type="submit" name="Delete" value="Delete" />
+
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+</body>
+
+</html>

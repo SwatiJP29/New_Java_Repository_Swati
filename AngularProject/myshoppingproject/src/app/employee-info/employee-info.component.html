@@ -1,0 +1,55 @@
+<!-- <p>
+  employee-info works!
+</p> -->
+<div class="panel panel-primary" *ngFor="let s of Profiles">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{s.name}}</h3>
+  </div>
+  <div class="panel-body">
+    <div class="col-xs-10">
+        <div class="row vertical-align">
+            <div class="col-xs-4">
+              <img class="imageClass" [src]="s.photoPath" />
+            </div>
+            <div class="col-xs-8">
+
+              <div class="row">
+                <div class="col-xs-6">
+                  Gender
+                </div>
+                <div class="col-xs-6">
+                  : {{s.gender}}
+                </div>
+              </div>
+              <div class="row">
+                  <div class="col-xs-6">
+                    Date of Birth
+                  </div>
+                  <div class="col-xs-6">
+                    : {{s.dateOfBirth}}
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                      Department
+                    </div>
+                    <div class="col-xs-6">
+                      : {{s.department}}
+                    </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-xs-6">
+                        isActive
+                      </div>
+                      <div class="col-xs-6">
+                        : {{s.isActive}}
+                      </div>
+                    </div>
+            </div>
+
+    </div>
+    
+
+    </div>
+  </div>
+</div>

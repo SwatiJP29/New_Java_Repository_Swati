@@ -1,0 +1,26 @@
+<p>
+  emplistservcom works!
+</p>
+<table>
+    <thead>
+      <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>AnnualSalary</th>
+        <th>DateofBirth</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let col of employees">
+  
+        <td>{{col.code}}</td>
+        <td>{{col.name}}</td>
+        <td> {{col.gender}}</td>
+        <td>{{col.annualSalary}}</td>
+        <td>{{col.dateOfBirth}}</td>
+      </tr>
+  
+    </tbody>
+  
+  </table>

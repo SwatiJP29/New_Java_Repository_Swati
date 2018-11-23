@@ -1,0 +1,80 @@
+<!-- <p>
+  employee works!
+</p> -->
+<h1>{{name}}</h1>
+<table>
+  <tr>
+    <td>{{row1}}</td>
+    <td>{{firstname}}</td>
+  </tr>
+  <tr>
+    <td>{{row2}}</td>
+    <td>{{lastname}}</td>
+  </tr>
+  <tr>
+    <td>{{row3}}</td>
+    <td>{{Gender}}</td>
+  </tr>
+  <tr>
+    <td>{{row4}}</td>
+    <td>{{Age}}</td>
+  </tr>
+</table>
+<h2>{{displayFullName()}}</h2>
+
+<span *ngIf="showFaculty"> Faculty: {{Faculty}}</span>
+<p><span *ngFor="let s of Subjects;"> {{s}} </span></p>
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>AnnualSalary</th>
+      <th>DateofBirth</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let col of Employees">
+
+      <td>{{col.Code}}</td>
+      <td>{{col.Name|emp:col.Gender}}</td>
+      <td> {{col.Gender}}</td>
+      <td>{{col.AnnualSalary}}</td>
+      <td>{{col.DateofBirth | date:'M/d/yyyy'}}</td>
+    </tr>
+    <tr *ngIf="Employees.length==0">
+      <td colspan="5">
+        No employees to display
+      </td>
+
+    </tr>
+
+  </tbody>
+
+</table>
+<table>
+  <tr>
+    <th>Selected</th>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Salary</th>
+    <th>Type</th>
+  </tr>
+  <tr *ngFor="let emp of Employee">
+    <td><span *ngIf="emp == selectedEmployee">--</span></td>
+    <td>{{emp.employeeid}}</td>
+    <td>{{emp.employeename}}</td>
+    <td>{{emp.salary}}</td>
+    <td> <span [ngSwitch]="emp.type"> <span *ngSwitchCase="0">Daily</span> <span *ngSwitchCase="1">Permanent</span>
+        <span *ngSwitchCase="2">Contract</span> <span *ngSwitchCase="3">Retired</span> <span *ngSwitchDefault>Other</span>
+      </span>
+    <td>
+  </tr>
+</table>
+<p>New Employee ID is {{emp.employeeid}}</p>
+<p>New Employee Name is {{emp.employeename}}</p>
+<p>New Employee Salary is {{emp.salary}}</p>
+<p>Duration: <span [ngSwitch]="Duration"> <span *ngSwitchCase="1">One Day</span> <span *ngSwitchCase="7">One Week</span>
+    <span *ngSwitchCase="30">One Month</span> <span *ngSwitchDefault>Please check the value</span> </span>
+<p>{{emp | json}}</p>

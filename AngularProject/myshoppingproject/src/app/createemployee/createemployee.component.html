@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Template Driven Form</title>
+  <style>
+    body{
+      padding: 30px;
+    }
+  </style>
+</head>
+<body>
+    <table border=1 style="border-collapse:collapse; font-family:Arial; table-layout: fixed">
+        <tr style="background-color:silver; font-weight: bold">
+          <td colspan="3" style="padding:3px; white-space:nowrap; width:100%">
+            <h4>Employee Form</h4>
+          </td>
+        </tr>
+        <tr style="background-color:silver; font-weight: bold">
+          <td style="padding:10px; white-space:nowrap; width:33%">
+            <div>touched : {{ frm.touched }}</div>
+            <div>untouched : {{ frm.untouched }}</div>
+          </td>
+          <td style="padding:10px; white-space:nowrap; width:33%">
+            <div>pristine : {{ frm.pristine }}</div>
+            <div>dirty : {{ frm.dirty }}</div>
+          </td>
+          <td style="padding:10px; white-space:nowrap; width:33%">
+            <div>valid : {{ frm.valid }}</div>
+            <div>invalid : {{ frm.invalid }}</div>
+          </td>
+        </tr>
+      </table>
+  <h1>Template Driven Form</h1>
+  <div class="container">
+  <div class="jumbotron">
+  <form #frm = "ngForm" (ngSubmit)="UserFunction(frm)" ngNativeValidate>
+      <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text"  class="form-control" pattern="[a-zA-Z][a-zA-Z ]+" name="name"  #NameControl="ngModel" ngModel required>
+          <div *ngIf="NameControl?.touched && NameControl?.invalid" class="alert alert-danger">
+            <div *ngIf="NameControl.errors?.required">
+              Name is required
+            </div>
+            <div *ngIf="NameControl.errors?.pattern">
+              Please enter a valid Name
+            </div>
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="inputPhoneNumber">Contact</label>
+          <input type="number" class="form-control" pattern="[789][0-9]{9}" name="contact" placeholder="PhoneNumber" #ContactControl="ngModel" ngModel required>
+          <div *ngIf="ContactControl?.touched && ContactControl?.invalid" class="alert alert-danger">
+              <div *ngIf="ContactControl.errors?.required">
+                Contact is required
+              </div>
+              <div *ngIf="ContactControl.errors?.pattern">
+                Please enter a valid contact number
+              </div>
+            </div>
+      </div>
+      <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email" #EmailControl="ngModel" ngModel required>
+          <div *ngIf="EmailControl?.touched && EmailControl?.invalid" class="alert alert-danger">
+              <div *ngIf="EmailControl.errors?.required">
+                Email is required
+              </div>
+              <div *ngIf="EmailControl.errors?.pattern">
+                Please enter a valid email
+              </div>
+            </div>
+      </div>
+      
+      <button type="submit" name="button" class="btn btn-success" [disabled]="frm.invalid">Add User</button>
+  </form>
+  </div>
+</div>
+{{frm.value | json}}
+</body>
+
+
+
+</html>
