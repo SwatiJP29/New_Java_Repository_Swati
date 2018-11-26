@@ -1,8 +1,6 @@
 INDEX VERSION 1.3+C:\Users\Administrator\Documents\GitHub\New_Java_Repository_Swati\JEE\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2994339105.index
+1884725354.index
+1839799254.index
 2698386594.index
-2557085647.index
-1787459239.index
-417849525.index
 3573985063.index
-461312557.index
-1735216846.index
