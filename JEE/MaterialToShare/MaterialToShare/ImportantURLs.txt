@@ -1,0 +1,13 @@
+
+
+Basics:
+	https://www.javatpoint.com/servlet-tutorial
+	https://www.journaldev.com/2114/servlet-jsp-tutorial
+
+Java Documentation...
+	https://docs.oracle.com/cd/E17802_01/products/products/servlet/2.5/docs/servlet-2_5-mr2/javax/servlet/package-summary.html
+
+Advanced Concepts...
+	http://www.servlets.com/docs/
+
+
