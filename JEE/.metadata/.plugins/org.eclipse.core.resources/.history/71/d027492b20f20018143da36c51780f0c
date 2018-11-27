@@ -1,0 +1,5 @@
+package com.jp.hr.exceptions;
+
+public class HrException extends Exception {
+
+}

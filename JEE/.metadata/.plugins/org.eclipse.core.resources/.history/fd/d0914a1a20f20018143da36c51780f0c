@@ -1,0 +1,5 @@
+package com.jp.hr.interfaces;
+
+public class DaoEmployee {
+
+}

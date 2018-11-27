@@ -1,0 +1,16 @@
+package com.jp.hr.services;
+
+import java.util.ArrayList;
+
+import com.jp.hr.entities.Employee;
+import com.jp.hr.exceptions.HrException;
+
+public class ServiceEmployeeImpl implements ServiceEmployee {
+
+	@Override
+	public ArrayList<Employee> getEmpList() throws HrException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

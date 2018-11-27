@@ -1,0 +1,49 @@
+package com.jp.hr.daos;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import com.jp.hr.entities.Employee;
+import com.jp.hr.exceptions.HrException;
+
+/* The ClassNotFoundException and SQLException should not come out of Dao Class
+ * 
+ * 
+ */
+
+public class DaoEmployeeImpl implements DaoEmployee{
+	
+	private Connection getConnection() throws HrException{
+		String driverName = "oracle.jdbc.OracleDriver";
+		String url = "jdbc:oracle:thin:@localhost:1521/orcl";
+		String userName = "hr";
+		String password = "hr";
+		
+		
+		try {
+			Class.forName(driverName);
+			return DriverManager.getConnection(driverName,userName, password);
+		} catch (ClassNotFoundException e) {
+			throw new HrException("Driver class missing");
+		} catch (SQLException e) {
+			throw new HrException("Connectin failed");
+		}
+	}
+	
+	private void closeConnection(Connection connect) throws SQLException{
+		connect.close();
+		
+	}
+
+	@Override
+	public ArrayList<Employee> getEmplist() throws HrException {
+		
+		return null;
+	}
+	
+	
+	
+
+}

@@ -1,0 +1,17 @@
+package com.jp.hr.entities;
+
+public class Employee {
+	private int empID;
+	private String firstName;
+	private String lastName;
+	
+	public Employee(int empID, String firstName, String lastName) {
+		super();
+		this.empID = empID;
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
+	
+	
+
+}

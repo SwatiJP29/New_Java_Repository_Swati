@@ -1,0 +1,47 @@
+package com.jp.hr.servlets;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.jp.hr.services.ServiceEmployee;
+import com.jp.hr.services.ServiceEmployeeImpl;
+
+
+@WebServlet("*.do") //A generic url.
+public class FrontController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	private ServiceEmployee services;
+	
+	
+	@Override
+	public void init() throws ServletException {
+		services = new ServiceEmployeeImpl();
+	}
+
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String command = (getCommand(request.getRequestURI()));
+		switch(command){
+			case "empList":{
+				
+			}
+		}
+		
+	}
+
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+	
+	private String getCommand(String uri){
+		int leftPosi = uri.lastIndexOf("/");
+		int rtPosi = uri.lastIndexOf(".");
+		return uri.substring(leftPosi+1, rtPosi);
+	}
+
+}
