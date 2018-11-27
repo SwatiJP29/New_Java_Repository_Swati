@@ -7,8 +7,9 @@
 		<title>Insert title here</title>
 	</head>
 <body>
-	<h1> JP Morgan Chase India</h1>
-	${param.param1 } <---- Expression Language--->
+	<%--<jsp:include page="/jsps/Head.jsp"></jsp:include> --%>
+	<jsp:include page="/jsps/Page-Head.jsp"></jsp:include>
+	${param.param1 } <!-- Expression Language-->
 
 </body>
 </html>

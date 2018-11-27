@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>JPM_040_Config</display-name>
+  
+  <servlet>
+  	<servlet-name>P1</servlet-name> 
+  	<!-- Canonical Name which the xml uses to servlet mapping -->
+  	<servlet-class>com.jp.config.servlets.Process1</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>P1</servlet-name>
+  	<url-pattern>/process1</url-pattern>
+  
+  </servlet-mapping>
+</web-app>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>JPM_040_Config</display-name>
+  <context-param> <!-- Context Parameter is for entire project -->
+    <param-name>Company Name</param-name>
+    <param-value>J P Morgan</param-value>
+  </context-param>
+  
+  <servlet>
+  	<servlet-name>P3</servlet-name>
+  	<servlet-class>com.jp.config.servlets.Process3</servlet-class>
+  	<init-param> <!-- These are config parameters and is there for servlet only -->
+  		<param-name>PageHead</param-name>
+  		<param-value>Employee List</param-value>
+  	</init-param>
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>P3</servlet-name>
+  	<url-pattern>/process3</url-pattern>
+  </servlet-mapping>
+</web-app>
