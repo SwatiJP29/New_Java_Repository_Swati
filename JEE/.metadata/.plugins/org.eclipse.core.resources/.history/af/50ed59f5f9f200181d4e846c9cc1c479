@@ -1,0 +1,9 @@
+package com.jp.hr.entities;
+
+public class Product {
+	int productId;
+	String productCategory;
+	String productName;
+	float productPrice;
+
+}

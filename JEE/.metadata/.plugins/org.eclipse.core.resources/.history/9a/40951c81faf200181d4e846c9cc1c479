@@ -1,0 +1,50 @@
+package com.jp.hr.daos;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import com.jp.hr.entities.Product;
+import com.jp.hr.exceptions.HrException;
+
+public class DaoProductImpl implements DaoProduct{
+	
+	private Connection getConnection() throws ClassNotFoundException, SQLException {
+		String driverName = "oracle.jdbc.OracleDriver";
+		String url = "jdbc:oracle:thin:@localhost:1521/orcl";
+		String userName = "hr";
+		String password = "hr";
+		
+		
+		
+			Class.forName(driverName);
+			return DriverManager.getConnection(url,userName, password);
+		
+	}
+	
+	private void closeConnection(Connection connect) throws SQLException{
+		connect.close();
+		
+	}
+
+	@Override
+	public ArrayList<Product> getEmplist() throws HrException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Product getProductDetails(int productId) throws HrException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean insertNewRecord(Product product) throws HrException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+
+}

@@ -16,7 +16,7 @@ public class Employee {
 		super();
 	}
 
-	public int getEmpID() {
+	public int getEmpID() { //Property name: empID
 		return empID;
 	}
 
@@ -24,7 +24,7 @@ public class Employee {
 		this.empID = empID;
 	}
 
-	public String getFirstName() {
+	public String getFirstName() { //Property name: firstName
 		return firstName;
 	}
 
@@ -32,7 +32,7 @@ public class Employee {
 		this.firstName = firstName;
 	}
 
-	public String getLastName() {
+	public String getLastName() {   //Property name: lastName
 		return lastName;
 	}
 
