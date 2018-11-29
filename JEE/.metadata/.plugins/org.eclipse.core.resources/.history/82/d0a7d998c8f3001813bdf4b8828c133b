@@ -1,0 +1,9 @@
+package com.jp.hr.servlets;
+
+import com.jp.hr.services.ServiceEmployeeImpl;
+
+public class FCforRole1 {
+	public static void main(String[] args){
+		Role1 role = new ServiceEmployeeImpl();
+	}
+}

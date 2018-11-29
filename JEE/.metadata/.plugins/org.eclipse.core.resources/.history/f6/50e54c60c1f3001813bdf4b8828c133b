@@ -1,0 +1,6 @@
+package com.jp.hr.utilities;
+
+public class Connection {//This is a Factory pattern class
+	
+	private Connection connect;
+}

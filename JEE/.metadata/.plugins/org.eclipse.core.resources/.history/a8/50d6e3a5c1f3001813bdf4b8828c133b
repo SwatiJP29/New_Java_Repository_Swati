@@ -1,0 +1,13 @@
+package com.jp.hr.utilities;
+
+public class ConnectionFactory {//This is a Factory pattern class
+	
+	private ConnectionFactory connect;
+	
+	public ConnectionFactory(){
+		String driverName = "oracle.jdbc.OracleDriver";
+		String url = "jdbc:oracle:thin:@localhost:1521/orcl";
+		String userName = "hr";
+		String password = "hr";
+	}
+}
