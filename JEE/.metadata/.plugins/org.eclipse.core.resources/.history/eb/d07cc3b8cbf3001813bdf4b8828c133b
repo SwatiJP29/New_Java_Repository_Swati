@@ -8,7 +8,7 @@ public class FCforRole1 {
 	public static void main(String[] args){
 		try {
 			Role1 role = new ServiceEmployeeImpl();
-		
+			
 		} catch (HrException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
