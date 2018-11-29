@@ -4,4 +4,5 @@
   <module moduleId="org.eclipse.jst.jee.server:JPM_050_Layer_dao-service" serverId="Tomcat v8.5 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:JPM_020_Dispatching" serverId="Tomcat v8.5 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:JPM_030_Navigation" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:JPM_060_Cookies" serverId="Tomcat v8.5 Server at localhost"/>
 </modules>

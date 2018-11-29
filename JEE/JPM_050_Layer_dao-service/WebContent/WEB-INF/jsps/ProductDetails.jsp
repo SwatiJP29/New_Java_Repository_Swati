@@ -13,7 +13,8 @@
 			<th>Product Category</th>
 			<th>Product Name</th>
 			<th>Product Price</th>
-			<th>Action</th>
+			<th>Update</th>
+			<th>Delete</th>
 		</tr>
 		<tr>
 			<td>${requestScope.productDetails.productId }</td>
