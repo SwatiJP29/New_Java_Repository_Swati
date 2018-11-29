@@ -11,14 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
-/* Cookie : JSESSIONID
- * URL Rewriting
- * 
- * 
- * 
- */
-
-
 @WebServlet("/afterLogin")
 public class AfterLogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
