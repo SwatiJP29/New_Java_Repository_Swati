@@ -151,7 +151,7 @@
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
       
-      <Context docBase="JPM_110_Filters" path="/JPM_110_Filters" reloadable="true" source="org.eclipse.jst.jee.server:JPM_110_Filters"/></Host>
+      <Context docBase="JPM_120_Listeners" path="/JPM_120_Listeners" reloadable="true" source="org.eclipse.jst.jee.server:JPM_120_Listeners"/></Host>
     </Engine>
   </Service>
 </Server>
