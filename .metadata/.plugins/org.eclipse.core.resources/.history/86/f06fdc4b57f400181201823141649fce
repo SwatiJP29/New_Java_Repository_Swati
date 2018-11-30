@@ -1,0 +1,11 @@
+package com.jp.dp;
+
+/*Declare self reference as static and private
+ * Create private constructor
+ * 
+ */
+
+public class Singleton01 {
+	private static Singleton01 singleton;
+
+}

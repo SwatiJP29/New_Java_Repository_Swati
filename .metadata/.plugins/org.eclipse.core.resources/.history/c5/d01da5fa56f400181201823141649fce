@@ -1,0 +1,5 @@
+package com.jp.dp;
+
+public class Singleton01 {
+
+}
