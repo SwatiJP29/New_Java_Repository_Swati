@@ -13,6 +13,7 @@ import javax.sql.DataSource;
 import com.jp.hr.entities.Employee;
 import com.jp.hr.exceptions.HrException;
 import com.jp.hr.utilities.ConnectionFactory;
+import com.jp.hr.utilities.ConnectionFactoryTomcat;
 
 /* The ClassNotFoundException and SQLException should not come out of Dao Class
  * The database specific entities must not come out of the class (Like Exception and REsultSet)
@@ -30,7 +31,9 @@ public class DaoEmployeeImpl implements DaoEmployee{
 	
 	public DaoEmployeeImpl() throws HrException {
 		try {
-			ConnectionFactory factory = ConnectionFactory.getConnectionFactory();
+			//ConnectionFactory factory = ConnectionFactory.getConnectionFactory();
+			
+			ConnectionFactoryTomcat factory = ConnectionFactoryTomcat.getConnectionFactory();
 			dataSource = factory.getDataSource();
 		} catch (Exception e) {
 			throw new HrException("Problem in procuring connection. ", e);
@@ -49,7 +52,7 @@ public class DaoEmployeeImpl implements DaoEmployee{
 		try {
 			 connect = dataSource.getConnection();
 			 stmt = connect.createStatement();
-			 rs = stmt.executeQuery("select employee_id,first_name,last_name from employee1");
+			 rs = stmt.executeQuery("select employee_id,first_name,last_name from employee123");
 			
 			
 			while (rs.next()){

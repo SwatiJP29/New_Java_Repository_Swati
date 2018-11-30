@@ -1,0 +1,33 @@
+package com.jp.hr.utilities;
+
+import java.sql.SQLException;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+
+import com.jp.hr.exceptions.HrException;
+
+public class ConnectionFactoryTomcat {
+	private static ConnectionFactoryTomcat factory;
+	
+	private ConnectionFactoryTomcat() {
+		try {
+			Context initContext = new InitialContext();
+			Context envContext  = (Context)initContext.lookup("java:/comp/env");
+			DataSource ds = (DataSource)envContext.lookup("jdbc/myoracle");
+		} catch (NamingException e) {
+			// TODO Auto-generated catch block
+			throw new HrException("Problem in connecting to JNDL", e);
+		}
+	}
+	
+	public static ConnectionFactoryTomcat getConnectionFactory() throws SQLException, ClassNotFoundException{
+		if (factory==null){
+			factory = new ConnectionFactoryTomcat();
+		}
+		
+		return factory;
+	}
+}

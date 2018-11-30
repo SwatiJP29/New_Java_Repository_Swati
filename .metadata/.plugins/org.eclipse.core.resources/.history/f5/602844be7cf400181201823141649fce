@@ -1,0 +1,14 @@
+package com.jp.hr.daos;
+
+import com.jp.hr.entities.User;
+import com.jp.hr.exceptions.HrException;
+
+public class DaoUserImpl implements DaoUser{
+
+	@Override
+	public User getUserDetails() throws HrException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

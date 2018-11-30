@@ -209,7 +209,9 @@ public class FrontController extends HttpServlet {
 				
 			}
 		} catch (HrException e) {
-			e.printStackTrace();
+			/*request.setAttribute("msg", e.getMessage());
+			jspName = "Errors";*/
+			throw new ServletException(e.getMessage());
 		}
 		
 		dispatch = request.getRequestDispatcher(prefix+jspName+postfix);

@@ -1,0 +1,5 @@
+package com.jp.hr.daos;
+
+public class DaoUserImpl {
+
+}

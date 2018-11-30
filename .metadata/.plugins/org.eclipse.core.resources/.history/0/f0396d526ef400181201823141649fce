@@ -1,0 +1,9 @@
+package com.jp.hr.entities;
+
+public class User {
+	private String userID;
+	private String password;
+	private String fullName;
+	private String role;
+
+}

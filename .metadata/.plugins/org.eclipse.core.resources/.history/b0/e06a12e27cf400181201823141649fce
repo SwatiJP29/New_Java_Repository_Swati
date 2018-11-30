@@ -1,0 +1,30 @@
+package com.jp.hr.daos;
+
+import javax.sql.DataSource;
+
+import com.jp.hr.entities.User;
+import com.jp.hr.exceptions.HrException;
+import com.jp.hr.utilities.ConnectionFactoryTomcat;
+
+public class DaoUserImpl implements DaoUser{
+	
+	private DataSource dataSource;
+	public DaoEmployeeImpl() throws HrException {
+	try {
+		//ConnectionFactory factory = ConnectionFactory.getConnectionFactory();
+		
+		ConnectionFactoryTomcat factory = ConnectionFactoryTomcat.getConnectionFactory();
+		dataSource = factory.getDataSource();
+	} catch (Exception e) {
+		throw new HrException("Problem in procuring connection. ", e);
+	}
+	
+}
+
+	@Override
+	public User getUserDetails() throws HrException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
