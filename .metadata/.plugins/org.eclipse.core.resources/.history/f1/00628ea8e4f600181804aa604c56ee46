@@ -1,0 +1,5 @@
+package com.jp.cart.services;
+
+public interface ItemService {
+
+}

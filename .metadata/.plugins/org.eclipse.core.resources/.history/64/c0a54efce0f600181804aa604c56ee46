@@ -1,0 +1,15 @@
+package com.jp.cart.daos;
+
+import java.util.ArrayList;
+
+import com.jp.cart.entities.Item;
+import com.jp.cart.exception.CartException;
+
+public interface DaoItemImpl {
+public ArrayList<Item> getItemlist() throws CartException;
+	
+	public Item getItemDetails(int itemId) throws CartException;
+	
+	public boolean insertNewRecord(Item item) throws CartException;
+
+}

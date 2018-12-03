@@ -1,0 +1,20 @@
+package com.jp.cart.entities;
+
+public class ItemDetails {
+	private int itemId;
+	private String name;
+	private String category="Electronics";
+	private float price;
+	private int itemStockNumber;
+	public ItemDetails(int itemId, String name, String category, float price, int itemStockNumber) {
+		super();
+		this.itemId = itemId;
+		this.name = name;
+		this.category = category;
+		this.price = price;
+		this.itemStockNumber = itemStockNumber;
+	}
+	
+	
+
+}

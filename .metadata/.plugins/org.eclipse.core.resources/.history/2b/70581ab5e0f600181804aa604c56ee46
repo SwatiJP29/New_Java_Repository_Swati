@@ -1,0 +1,7 @@
+package com.jp.cart.daos;
+
+import com.jp.cart.exception.CartException;
+
+public interface DaoItemImpl extends CartException{
+
+}

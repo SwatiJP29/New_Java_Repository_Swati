@@ -1,0 +1,14 @@
+package com.jp.cart.daos;
+
+import java.util.ArrayList;
+
+import com.jp.cart.entities.Item;
+import com.jp.cart.exception.CartException;
+
+public interface DaoOrder {
+	
+public ArrayList<Order> getOrderlist() throws CartException;
+	
+	public Item getOrderDetails(int orderId) throws CartException;
+
+}

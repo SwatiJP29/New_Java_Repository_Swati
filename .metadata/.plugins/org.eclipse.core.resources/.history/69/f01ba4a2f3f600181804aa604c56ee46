@@ -1,0 +1,5 @@
+package com.jp.cart.entities;
+
+public class Cart {
+
+}

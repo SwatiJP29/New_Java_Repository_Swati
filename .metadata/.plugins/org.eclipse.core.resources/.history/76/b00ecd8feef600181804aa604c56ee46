@@ -1,0 +1,5 @@
+package com.jp.cart.daos;
+
+public class DaoOrderImpl {
+
+}

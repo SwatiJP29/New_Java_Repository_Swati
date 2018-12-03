@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="Assesment_ShoppingCart">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <property name="context-root" value="Assesment_ShoppingCart"/>
+        <property name="java-output-path" value="/Assesment_ShoppingCart/build/classes"/>
+    </wb-module>
+</project-modules>

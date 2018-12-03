@@ -1,0 +1,6 @@
+package com.jp.cart.entities;
+
+public class Cart {
+	private ArrayList<Item> cart;
+
+}

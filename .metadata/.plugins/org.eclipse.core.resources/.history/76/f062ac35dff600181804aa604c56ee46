@@ -1,0 +1,10 @@
+package com.jp.cart.entities;
+
+public class ItemDetails {
+	int itemId;
+	String name;
+	String category="Electronics";
+	float price;
+	int itemStockNumber;
+
+}

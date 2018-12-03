@@ -1,0 +1,42 @@
+package com.jp.cart.servlets;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.jp.cart.services.ItemService;
+import com.jp.hr.exceptions.HrException;
+import com.jp.hr.services.ServiceEmployeeImpl;
+import com.jp.hr.services.ServiceProductImpl;
+
+
+@WebServlet("*.do")
+public class FrontController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	private ItemService services;
+	
+	@Override
+	public void init() throws ServletException {
+		try {
+			services = new ItemServiceImpl();
+		} catch (CartException e) {
+			throw new ServletException("Init mthod failed. ",e);
+		}
+		pservices = new ServiceProductImpl();
+	}
+
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+	}
+
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		doGet(request, response);
+	}
+
+}

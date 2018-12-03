@@ -1,0 +1,9 @@
+package com.jp.cart.entities;
+
+public class ItemDetails {
+	int itemID;
+	String name;
+	String category="Electronics";
+	
+
+}
