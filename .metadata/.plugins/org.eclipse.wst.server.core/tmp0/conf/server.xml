@@ -151,7 +151,7 @@
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
       
-      <Context docBase="C:\Users\Administrator\Documents\GitHub\New_Java_Repository_Swati\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\Administrator\Documents\GitHub\New_Java_Repository_Swati\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\JPM_120_Listeners" path="/JPM_120_Listeners" reloadable="true" source="org.eclipse.jst.jee.server:JPM_120_Listeners"/></Host>
+      <Context docBase="C:\Users\Administrator\Documents\GitHub\New_Java_Repository_Swati\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\Administrator\Documents\GitHub\New_Java_Repository_Swati\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\JPM_050_Layer_dao-service" path="/JPM_050_Layer_dao-service" reloadable="true" source="org.eclipse.jst.jee.server:JPM_050_Layer_dao-service"/><Context docBase="C:\Users\Administrator\Documents\GitHub\New_Java_Repository_Swati\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\JPM_080_Layer" path="/JPM_080_Layer" reloadable="true" source="org.eclipse.jst.jee.server:JPM_080_Layer"/></Host>
     </Engine>
   </Service>
 </Server>
