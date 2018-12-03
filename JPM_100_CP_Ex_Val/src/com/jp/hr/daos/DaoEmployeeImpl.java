@@ -52,7 +52,7 @@ public class DaoEmployeeImpl implements DaoEmployee{
 		try {
 			 connect = dataSource.getConnection();
 			 stmt = connect.createStatement();
-			 rs = stmt.executeQuery("select employee_id,first_name,last_name from employee123");
+			 rs = stmt.executeQuery("select employee_id,first_name,last_name from employee1");
 			
 			
 			while (rs.next()){
@@ -134,7 +134,7 @@ public class DaoEmployeeImpl implements DaoEmployee{
 
 	@Override
 	public boolean insertNewRecord(Employee emp) throws HrException {
-		String qry = "INSERT INTO Employee1 (employee_id, first_name, last_name) values (?,?,?)";
+		String qry = "INSERT INTO Employee1 (employee_id, first_name, last_name) values (seEmpId.nextval,?,?)";
 		Connection connect = null;
 		PreparedStatement stmt = null;
 		
@@ -142,9 +142,9 @@ public class DaoEmployeeImpl implements DaoEmployee{
 		try {
 			connect = dataSource.getConnection();
 			 stmt = connect.prepareStatement(qry);
-			 stmt.setInt(1, emp.getEmpID());
-			 stmt.setString(2,  emp.getFirstName());
-			 stmt.setString(3, emp.getLastName());
+			 //stmt.setInt(1, emp.getEmpID());
+			 stmt.setString(1,  emp.getFirstName());
+			 stmt.setString(2, emp.getLastName());
 			 
 			 int recInserted = stmt.executeUpdate();
 			 return recInserted==1? true: false;

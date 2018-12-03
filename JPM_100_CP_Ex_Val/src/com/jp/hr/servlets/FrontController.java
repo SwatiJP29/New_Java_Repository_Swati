@@ -115,11 +115,11 @@ public class FrontController extends HttpServlet {
 					break;
 				}
 				case "submitJoining":{
-					String empIDStr = request.getParameter("empId");
+					//String empIDStr = request.getParameter("empId");
 					String firstName = request.getParameter("firstName");
 					String lastName = request.getParameter("lastName");
-					int empID = Integer.parseInt(empIDStr);
-					Employee emp = new Employee(empID, firstName, lastName);
+					//int empID = Integer.parseInt(empIDStr);
+					Employee emp = new Employee( firstName, lastName);
 					boolean isSuccessful = services.joinNewEmployee(emp);
 					String msg = isSuccessful?"Employee Inserted" : "Insertion of Record failed";
 					request.setAttribute("message", msg);
@@ -209,8 +209,8 @@ public class FrontController extends HttpServlet {
 				
 			}
 		} catch (HrException e) {
-			/*request.setAttribute("msg", e.getMessage());
-			jspName = "Errors";*/
+			request.setAttribute("msg", e.getMessage());
+			jspName = "Errors";
 			throw new ServletException(e.getMessage());
 		}
 		
