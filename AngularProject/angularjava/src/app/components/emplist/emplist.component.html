@@ -1,0 +1,24 @@
+<p>
+  emplist works!
+</p>
+<div class="panel-body">
+  <table class="table-hover" style="width:600px;">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let e of empList">
+        <td>{{e.empId}}</td>
+        <td>{{e.firstName}}</td>
+        <td>{{e.lastName}}</td>
+      </tr>
+      <tr *ngIf="!empList || empList.length==0">
+        <td colspan="3">No records to display</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
