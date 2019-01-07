@@ -36,7 +36,9 @@
   <h1>Template Driven Form</h1>
   <div class="container">
   <div class="jumbotron">
-  <form #frm = "ngForm" (ngSubmit)="UserFunction(frm)" ngNativeValidate>
+  <form #frm = "ngForm" (ngSubmit)="UserFunction(frm)" class="form-horizontal" role="form">
+      <form data-toggle="validator" role="form">
+          <h3>Registration Form</h3>
       <div class="form-group">
           <label for="name">Name</label>
           <input type="text"  class="form-control" pattern="[a-zA-Z][a-zA-Z ]+" name="name"  #NameControl="ngModel" ngModel required>
